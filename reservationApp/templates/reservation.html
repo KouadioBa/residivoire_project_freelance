@@ -1,0 +1,843 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashbord</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'img/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'img/css/style2.css' %}">
+    <style>
+        /* media query nav-bar */
+        @media screen and (min-width:993px) and (max-width:1400px) {
+          .form-inline{
+            width: 63% !important;
+         }
+         .agenda, .aide{
+          display: none;
+         }
+         
+         .bell-notification{
+            margin-left: -16px;
+         }
+        }
+        @media screen and (min-width:401px) and (max-width:992px) {
+          .zonee-three-search-part{
+            width: auto;
+          }
+          .etat{
+            height: 50px;
+            width: 10%;
+          }
+          .zone-one-first-respon{
+            margin-top: -50px;
+          }
+          .img-nn-respon img{
+            margin-top: -15px !important;
+            width: 80%;
+            margin-bottom: 30px;
+          }
+          .name-resp{
+            display: none;
+          }
+          .reservation-resp{
+            font-size: 25px !important;
+          }
+          .zonee-three{
+            margin-bottom: 15px !important;
+          }
+          .zonee-tow{
+            display: none;
+          }
+          .hr-zone-three{
+            display: none;
+          }
+          .occupe, .libre{
+            display: none;
+          }
+          .itemperpage, option{
+            font-size: 12px !important;
+          }
+          .size-of-details p{
+            display: none;
+          }
+          .zonee-three-first-delete{
+            display: none;
+          }
+          .calendrier-section{
+            display: none;
+          }
+          .zonee-first-delete{
+            display: none !important;
+          }
+          .conn-part-one, .conn-part-two, .conn-part-three, .conn-part-four, .conn-part-five{
+            font-size: 13px !important;
+          }
+          .drop-respon{
+            margin-top: -5px !important;
+          }
+          .first-nav-bar{
+            height: auto !important;
+          }
+          .img-end-nav-bar{
+            width: 30% !important;
+            height: auto !important;
+          }
+         .suppOne, .agenda, .aide{
+            display: none;
+         }
+        }
+        @media screen and (min-width:320px) and (max-width:400px) {
+          .zonee-three-search-part{
+            width: auto;
+          }
+          .etat{
+            height: 25px;
+            width: 11%;
+          }
+          .img-nn-respon img{
+            margin-top: 0px !important;
+            width: 100%;
+            margin-bottom: 40px;
+          }
+          .reservation-resp{
+            font-size: 20px !important;
+          }
+          .zonee-three{
+            margin-bottom: 15px !important;
+          }
+          .font-th-td,th,td{
+            font-size: 12px !important;
+          }
+          .zonee-tow{
+            display: none;
+          }
+          .hr-zone-three{
+            display: none;
+          }
+          .occupe, .libre{
+            display: none;
+          }
+          .itemperpage, option{
+            font-size: 10px !important;
+          }
+          .size-of-details p{
+            display: none;
+          }
+          .zonee-three-first-delete{
+            display: none;
+          }
+          .calendrier-section{
+            display: none;
+          }
+          .zonee-first-delete{
+            display: none !important;
+          }
+          .conn-part-one, .conn-part-two, .conn-part-three, .conn-part-four, .conn-part-five{
+            font-size: 10px !important;
+          }
+          .drop-respon{
+            margin-top: -5px !important;
+          }
+          .first-nav-bar{
+            height: auto !important;
+          }
+          .img-end-nav-bar{
+            width: 90% !important;
+            height: auto !important;
+          }
+         .suppOne, .agenda, .aide{
+            display: none;
+         }
+        }
+        /* end media query nav-bar */
+        #menu-demo2, #menu-demo2 ul{
+            padding:0;
+            margin:0;
+            list-style:none;
+            text-align:center;
+        }
+        #menu-demo2 li{
+            display:inline-block;
+            position:relative;
+            border-radius:8px 8px 0 0;
+            width: 100%;
+        }
+        #menu-demo2 ul li{
+            display:inherit;
+            border-radius:0;
+        }
+        #menu-demo2 ul li:hover{
+            border-radius:0;
+        }
+        #menu-demo2 ul li:last-child{
+            border-radius:0 0 8px 8px;
+        }
+        #menu-demo2 ul{
+            position:absolute;
+            z-index: 1000;
+            max-height:0;
+            left: 0;
+            right: 0;
+            overflow:hidden;
+            -moz-transition: .8s all .3s;
+            -webkit-transition: .8s all .3s;
+            transition: .8s all .3s;
+        }
+        #menu-demo2 li:hover ul{
+            max-height:15em;
+        }
+        /* background des liens sous menus */
+        #menu-demo2 li:first-child li{
+            background: #488ffb;
+        }
+        #menu-demo2 li:nth-child(2) li{
+            background: #488ffb;
+        }
+        #menu-demo2 li:nth-child(3) li{
+            background: #488ffb;
+        }
+        #menu-demo2 li:nth-child(4) li{
+            background: #488ffb;
+        }
+        #menu-demo2 li:nth-child(5) li{
+            background: #488ffb;
+        }
+        #menu-demo2 li:nth-child(6) li{
+            background: #488ffb;
+        }
+        #menu-demo2 li:nth-child(7) li{
+            background: #488ffb;
+        }
+        #menu-demo2 li:last-child li{
+            background: #488ffb;
+        }
+        /* background  #488ffbns menus et sous menus au survol */
+        #menu-demo2 li:first-child:hover, #menu-demo2 li:first-child li:hover{
+            background: white;
+        }
+        #menu-demo2 li:nth-child(2):hover, #menu-demo2 li:nth-child(2) li:hover{
+            background: white;
+        }
+        #menu-demo2 li:nth-child(3):hover, #menu-demo2 li:nth-child(3) li:hover{
+            background:white;
+        }
+        #menu-demo2 li:nth-child(4):hover, #menu-demo2 li:nth-child(4) li:hover{
+            background:white;
+        }
+        #menu-demo2 li:nth-child(5):hover, #menu-demo2 li:nth-child(5) li:hover{
+            background:white;
+        }
+        #menu-demo2 li:nth-child(6):hover, #menu-demo2 li:nth-child(6) li:hover{
+            background:white;
+        }
+        #menu-demo2 li:nth-child(7):hover, #menu-demo2 li:nth-child(7) li:hover{
+            background:white;
+        }
+        #menu-demo2 li:last-child:hover, #menu-demo2 li:last-child li:hover{
+            background:white;
+        }
+        /* les a href */
+        #menu-demo2 a{
+            text-decoration:none;
+            display:block;
+            padding:8px 32px;
+            color:black;
+            font-family:arial;
+        }
+        #menu-demo2 ul a{
+            padding:8px 0;
+        }
+        #menu-demo2 li:hover li a{
+            color: black;
+            text-transform:inherit;
+        }
+        #menu-demo2 li:hover a, #menu-demo2 li li:hover a{
+            color:#000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- first nav-bar -->
+    <nav class="navbar navbar-expand-lg first-nav-bar" style="height: 50px;">
+      <a class="navbar-brand" href="{% url 'dashbord' %}"><h5 style="color: white;font-weight: bold;"><img width="15%" height="auto" src="{% static 'img/logo-color.png' %}" alt=""> Residivoire</h5></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <img width="100%" src="{% static 'img/arrow_down.png' %}" alt="">
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link add" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;color: white;font-weight: bold;"><i style="color: white;" class="bi bi-plus-circle-fill"></i> Ajouter</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="border-radius: 13px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+                <a class="dropdown-item" href="{% url 'dashbord'%}" style="color: #007bff;"><strong>Chambre</strong></a>
+                <hr style="margin-top: -2px;margin-left: 5px;margin-right: 5px;box-shadow: 2px 0px 2px 1px rgb(9 0 0 / 47%);font-weight: bold;">
+                <a class="dropdown-item" href="{% url 'reservation'%}" style="color: #007bff;"><strong>Réservation</strong></a>
+                <hr style="margin-top: -2px;margin-left: 5px;margin-right: 5px;box-shadow: 2px 0px 2px 1px rgb(9 0 0 / 47%);font-weight: bold;">
+                <a class="dropdown-item" href="{% url 'service'%}" style="color: #007bff;"><strong>Service</strong></a>
+                <hr style="margin-top: -2px;margin-left: 5px;margin-right: 5px;box-shadow: 2px 0px 2px 1px rgb(9 0 0 / 47%);font-weight: bold;">
+                <a class="dropdown-item" href="{% url 'residence'%}" style="color: #007bff;"><strong>Résidence</strong></a>
+                <hr style="margin-top: -2px;margin-left: 5px;margin-right: 5px;box-shadow: 2px 0px 2px 1px rgb(9 0 0 / 47%);font-weight: bold;">
+                <a class="dropdown-item" href="{% url 'gestion'%}" style="color: #007bff;"><strong>Gestionnaire</strong></a>
+                <hr style="margin-top: -2px;margin-left: 5px;margin-right: 5px;box-shadow: 2px 0px 2px 1px rgb(9 0 0 / 47%);font-weight: bold;">
+                <a class="dropdown-item" href="{% url 'client'%}" style="color: #007bff;"><strong>Client</strong></a>
+              <hr style="margin-top: -2px;margin-left: 5px;margin-right: 5px;box-shadow: 2px 0px 2px 1px rgb(9 0 0 / 47%);font-weight: bold;">
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <div class="float-end box suppOne"><i class="bi bi-search"></i><input type="text"></div>
+        </form>
+        <ul class="navbar-nav" style="margin-right: 0px;">
+          <li class="nav-item">
+            <a class="nav-link mt-2 agenda" style="color: white;font-weight: bold;" href="#">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mt-2 aide" style="color: white;font-weight: bold;" href="#"><i style="color: white;" class="bi bi-question-circle-fill"></i> Aide</a>
+          </li>
+          <li class="nav-item dropleft" style="width: 20%;">
+            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img class="img-end-nav-bar" style="margin-right: -300px;" class="mt-1" width="170%" height="auto" src="{% static 'img/nn.png' %}" alt="">
+            </a>
+            <div class="dropdown-menu mt-5 drop-respon" style="margin-right: -50px;border-radius: 13px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);" aria-labelledby="navbarDropdown">
+              <p class="text-center mt-2"><img width="50%"src="{% static 'img/nn.png' %}" alt=""></p>
+              <p class="text-center conn-part-one" style="font-size: 15px;"><strong>Kouadio Ba Cédric</strong></p>
+              <p class="text-center conn-part-two" style="font-size: 14px;margin-top: -20px;">kouadiobahcedric@gmail.com</p>
+              <p class="text-center conn-part-three" style="margin-top: -16px;font-size: 15px;"><u><a href="#" style="color: #007bff;text-align: center;">Gérer votre compte</a></u></p>
+              <a class="dropdown-item text-center conn-part-four" style="border: 1px solid rgb(167, 166, 166);color: #007bff;" href="#"><strong>Ajouter un gestionnaire</strong></a>
+              <div style="padding: 10px;">
+                <a class="dropdown-item text-center conn-part-five" style="background: #007bff;color: white;border:1px;border-radius: 10px;" href="#"><strong>Se déconnecter</strong></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- first end nav-bar -->
+    <!-- second part -->
+    <!-- number one -->
+    <div class="container-fluid mt-3">
+      <!-- first segment -->
+      <div class="row">
+        <div class="col">
+            <div class="zone-one">
+              <div class="row">
+                <div class="col img-nn-respon"><img width="100%" src="{% static 'img/nn.png' %}" alt=""></div>
+                <div class="col-8"><h5 class="text-left" style="color: rgb(32, 31, 31);font-size: 25px;">Kouadio Ba <br class="name-resp"> Cédric <br></h5>
+                  <p style="margin-top: -10px;">Propriétaire</p>
+                </div>
+              </div>
+              <p style="font-size: 17px;margin-top: -25px;">kouadiobahcedric@gmail.com</p>
+              <p style="font-size: 17px;margin-top: -12px;">(+225) 05 76 37 71 45</p>
+              <p class="zone-one-first-respon" style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 16px;">Détail du compte <img src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+            </div>
+            <div class="zone-tow mt-3">
+                <p class="text-center"><a href="#" style="text-decoration: none;color: white;">Tableau de bord</a></p>
+            </div>
+            <strong><hr></strong>
+            <ul id="menu-demo2">
+                <li><a href="#"><strong>Biens</strong></a>
+                    <ul>
+                        <li><a href="#">Résidence</a></li>
+                        <li><a href="#">Chambre</a></li>
+                        <li><a href="#">État des lieux</a></li>
+                        <li><a href="#">Service de chambre</a></li>
+                    </ul>
+                </li>
+                <strong><hr></strong>
+                <li><a href="#"><strong>Outils</strong></a>
+                    <ul>
+                        <li><a href="#">Matériels domotique</a></li>
+                        <li><a href="#">Matériels</a></li>
+                    </ul>
+                </li>
+                <strong><hr></strong>
+                <li><a href="#"><strong>Finances</strong></a>
+                    <ul>
+                        <li><a href="#">Résidence</a></li>
+                        <li><a href="#">Chambres</a></li>
+                        <li><a href="#">Clients</a></li>
+                        <li><a href="#">Service de chambre</a></li>
+                    </ul>
+                </li>
+                <strong><hr></strong>
+                <li><a href="#"><strong>Comptes</strong></a>
+                    <ul>
+                        <li><a href="#">Propriétaire</a></li>
+                        <li><a href="#">Chambres</a></li>
+                        <li><a href="#">Clients</a></li>
+                    </ul>
+                </li>
+                <strong><hr></strong>
+            </ul>
+        </div>
+        <div class="col-lg-8">
+            <div class="zonee-tow mb-3">
+                <div class="row zonee-first-delete">
+                    <div class="col-8 mt-5" style="padding:3%">
+                        <h1 style="color: #488ffb;font-size: 45px;"><strong>Salut, <span style="color: white;">Cédric Kouadio</span></strong></h1>
+                        <h5 style="color: #488ffb;font-size: 15px;">Bonne journée de travail !!</h5>
+                    </div>
+                    <div class="col-4" style="padding:2%">
+                        <img width="100%" src="{% static 'img/ttt.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="zonee-three">
+                <div class="row zonee-three-first-delete">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3><strong>Réservations</strong></h3>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr-zone-three">
+                <div class="row">
+                    <div class="col-4 size-of-details">
+                        <h3>Réservation total :</h3>
+                        <div class="d-flex flex-row bd-highlight mb-3 mt-5">
+                          <p>Réduire:</p>
+                          <p></p>
+                          <select name="" id="itemperpage" style="width: 28%;height: 34px;margin: 10px;margin-top: -5px;" class="form-select" aria-label="Default select example">
+                            <option value="05" selected>05</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                          </select>
+                          <div class="bottom-field" style="margin-top: -14px;width: 10%;margin-left: 100px;">
+                              <ul class="pagination">
+                                <li class="prev"><a href="#" id="prev"><i class="bi bi-chevron-left" style="color: #488ffb;"></i></a></li>
+                                  <!-- page number here -->
+                                <li class="next"><a href="#" id="next"><i class="bi bi-chevron-right" style="color: #488ffb;"></i></a></li>
+                              </ul>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <div class="float-end box mt-2 zonee-three-search-part">
+                            <i class="bi bi-search"></i>
+                            <input width="100%" type="text" name="" id="search">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end occupe-libre-delete">
+                    <p class="mt-3 occupe">Occupée <img width="15%" src="{% static 'img/allume.png' %}" alt=""></p>
+                    <p class="mt-3 libre">Libre <img width="23%" src="{% static 'img/eteint.png' %}" alt=""></p>
+                    <div class="p-2 bd-highlight">
+                        <div class="zone-tow">
+                            <p class="p-1 text-center"><a data-bs-toggle="modal" data-bs-target="#exampleModal" href="" style="text-decoration: none;color: white;margin: 20px;">Ajouté une réservation</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- tableau -->
+                <div class="table-responsive font-th-td">
+                    <table class="table custom-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <label class="control control--checkbox">
+                              <input type="checkbox" class="js-check-all"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <th scope="col">Client</th>
+                          <th scope="col">Chambre</th>
+                          <th scope="col">État</th>
+                          <th scope="col">Entrée</th>
+                          <th scope="col">Sortie</th>
+                          <th scope="col"></th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            <label class="control control--checkbox">
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <td>Premier Nom</td>
+                          <td>Chambre 1</td>
+                          <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>00H00</td>
+                          <td>
+                            <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <label class="control control--checkbox">
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <td>Deuxième Nom</td>
+                          <td>Chambre 2</td>
+                          <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>00H00</td>
+                          <td>
+                            <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <label class="control control--checkbox">
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <td>Troisième Nom</td>
+                          <td>Chambre 3</td>
+                          <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                          <td>---</td>
+                          <td>---</td>
+                          <td>00H00</td>
+                          <td>
+                            <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                          </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                              <label class="control control--checkbox">
+                                <input type="checkbox"/>
+                                <div class="control__indicator"></div>
+                              </label>
+                            </th>
+                            <td>Quatrième Nom</td>
+                            <td>Chambre 3</td>
+                            <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>00H00</td>
+                            <td>
+                              <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <label class="control control--checkbox">
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <td>Cinquième Nom</td>
+                          <td>Chambre 1</td>
+                          <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>00H00</td>
+                          <td>
+                            <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <label class="control control--checkbox">
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <td>Sixième Nom</td>
+                          <td>Chambre 1</td>
+                          <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>00H00</td>
+                          <td>
+                            <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <label class="control control--checkbox">
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <td>Septième Nom</td>
+                          <td>Chambre 1</td>
+                          <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>00H00</td>
+                          <td>
+                            <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <label class="control control--checkbox">
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <td>Huitième Nom</td>
+                          <td>Chambre 1</td>
+                          <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>00H00</td>
+                          <td>
+                            <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <label class="control control--checkbox">
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <td>Neuvième Nom</td>
+                          <td>Chambre 1</td>
+                          <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>00H00</td>
+                          <td>
+                            <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <label class="control control--checkbox">
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                          </th>
+                          <td>Dixième Nom</td>
+                          <td>Chambre 1</td>
+                          <td><img width="30%" src="{% static 'img/eteint.png' %}" alt=""></td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>15:45 | 10 jan. 2023</td>
+                          <td>00H00</td>
+                          <td>
+                            <p style="text-align: end;"><a href="#" style="color: #488ffb;font-size: 13px;">Voir plus <img width="7%" src="{% static 'img/icon depoyé.png' %}" alt=""></a></p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="end-zone" style="background: white;border-radius: 15px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+              <section class="calendrier-section">
+                <div class="row">
+                  <div class="col">
+                    <div class="content" style="background:none;height:0px;">
+                      <div class="calendar-container" style="height: auto;">
+                        <div class="calendar"> 
+                          <div class="year-header"> 
+                            <span class="left-button fa fa-chevron-left" id="prev"> </span> 
+                            <span class="year" id="label"></span> 
+                            <span class="right-button fa fa-chevron-right" id="next"> </span>
+                          </div> 
+                          <table class="months-table"> 
+                            <tbody>
+                              <tr class="months-row">
+                                <td class="month">Jan</td> 
+                                <td class="month">Feb</td> 
+                                <td class="month">Mar</td> 
+                                <td class="month">Apr</td> 
+                                <td class="month">May</td> 
+                                <td class="month">Jun</td> 
+                                <td class="month">Jul</td>
+                                <br>
+                                <td class="month">Aug</td> 
+                                <td class="month">Sep</td> 
+                                <td class="month">Oct</td>          
+                                <td class="month">Nov</td>
+                                <td class="month">Dec</td>
+                              </tr>
+                            </tbody>
+                          </table> 
+                          
+                          <table class="days-table"> 
+                            <td class="day">Sun</td> 
+                            <td class="day">Mon</td> 
+                            <td class="day">Tue</td> 
+                            <td class="day">Wed</td> 
+                            <td class="day">Thu</td> 
+                            <td class="day">Fri</td> 
+                            <td class="day">Sat</td>
+                          </table> 
+                          <div class="frame"> 
+                            <table class="dates-table"> 
+                              <tbody class="tbody">             
+                              </tbody> 
+                            </table>
+                          </div> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- Reservation part -->
+              <h2 class="text-center reservation-resp"><strong>Réservations</strong></h2>
+              <nav>
+                <div class="p-2 nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">En cours</button>
+                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">En attente</button>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="p-2 tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="d-flex justify-content-around mb-3" class="" style="padding: 2px;border: 1px #000; border-radius: 15px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+                    <div class="text-left">
+                      <p style="color: #000;font-size: 12px;"><strong>Réservation 1</strong></p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Client: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Chambre: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Durée: </p>
+                    </div>
+                    <img class="etat mt-3" height="50px" width="22%" src="{% static 'img/allume.png' %}" alt="">
+                  </div>
+                  <div class="d-flex justify-content-around mb-3" class="" style="padding: 2px;border: 1px #000; border-radius: 15px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+                    <div class="text-left">
+                      <p style="color: #000;font-size: 12px;"><strong>Réservation 1</strong></p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Client: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Chambre: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Durée: </p>
+                    </div>
+                    <img class="etat mt-3" height="50px" width="22%" src="{% static 'img/allume.png' %}" alt="">
+                  </div>
+                  <div class="d-flex justify-content-around mb-3" class="" style="padding: 2px;border: 1px #000; border-radius: 15px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+                    <div class="text-left">
+                      <p style="color: #000;font-size: 12px;"><strong>Réservation 1</strong></p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Client: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Chambre: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Durée: </p>
+                    </div>
+                    <img class="etat mt-3" height="50px" width="22%" src="{% static 'img/allume.png' %}" alt="">
+                  </div>
+                  <div class="d-flex justify-content-around mb-3" class="" style="padding: 2px;border: 1px #000; border-radius: 15px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+                    <div class="text-left">
+                      <p style="color: #000;font-size: 12px;"><strong>Réservation 1</strong></p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Client: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Chambre: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Durée: </p>
+                    </div>
+                    <img class="etat mt-3" height="50px" width="22%" src="{% static 'img/allume.png' %}" alt="">
+                  </div>
+                </div>
+                <div class="p-2 tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-contact-tab">
+                  <div class="d-flex justify-content-around mb-3" class="" style="padding: 2px;border: 1px #000; border-radius: 15px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+                    <div class="text-left">
+                      <p style="color: #000;font-size: 12px;"><strong>Réservation 1</strong></p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Client: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Chambre: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Durée: </p>
+                    </div>
+                    <img class="etat mt-3" height="50px" width="22%" src="{% static 'img/eteint.png' %}" alt="">
+                  </div>
+                  <div class="d-flex justify-content-around mb-3" class="" style="padding: 2px;border: 1px #000; border-radius: 15px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+                    <div class="text-left">
+                      <p style="color: #000;font-size: 12px;"><strong>Réservation 1</strong></p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Client: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Chambre: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Durée: </p>
+                    </div>
+                    <img class="etat mt-3" height="50px" width="22%" src="{% static 'img/eteint.png' %}" alt="">
+                  </div>
+                  <div class="d-flex justify-content-around mb-3" class="" style="padding: 2px;border: 1px #000; border-radius: 15px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+                    <div class="text-left">
+                      <p style="color: #000;font-size: 12px;"><strong>Réservation 1</strong></p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Client: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Chambre: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Durée: </p>
+                    </div>
+                    <img class="etat mt-3" height="50px" width="22%" src="{% static 'img/eteint.png' %}" alt="">
+                  </div>
+                  <div class="d-flex justify-content-around mb-3" class="" style="padding: 2px;border: 1px #000; border-radius: 15px;box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);">
+                    <div class="text-left">
+                      <p style="color: #000;font-size: 12px;"><strong>Réservation 1</strong></p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Client: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Chambre: </p>
+                      <p style="color: #000;line-height: 0;font-size: 12px;">Durée: </p>
+                    </div>
+                    <img class="etat mt-3" height="50px" width="22%" src="{% static 'img/eteint.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+              <!-- ajout de réseravation -->
+              <div style="margin: 10px;padding: 1px;">
+                <div class="zone-tow">
+                  <p class="p-1 text-center"><a href="#" style="text-decoration: none;color: white;margin: 20px;">Ajouté une réservation</a></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 style="color: #000;" class="modal-title" id="exampleModalLabel">Ajouté une réservation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- form -->
+                <form>
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-label">Client</label>
+                    <input placeholder="Client" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-label">Chambre</label>
+                    <input placeholder="Chambre" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-label">État</label>
+                    <input placeholder="État" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-label">Entrée</label>
+                    <input placeholder="Entrée" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="">
+                    <label for="exampleInputEmail1" class="form-label">Sortie</label>
+                    <input placeholder="Sortie" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-4">
+                    <label for="exampleInputPassword1" class="form-label">Heure</label>
+                    <input placeholder="Heure" type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Ajouter</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- script -->
+    <script src="{% static 'img/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'img/js/popper.min.js' %}"></script>
+    <script src="{% static 'img/js/popper1.js' %}"></script>
+    <script src="{% static 'img/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'img/js/main.js' %}"></script>
+    <script src="{% static 'img/js/main1.js' %}"></script>
+    <script src="{% static 'img/js/code.js' %}"></script>
+</body>
+</html>

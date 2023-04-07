@@ -1,0 +1,103 @@
+/* dashbord for site */
+/* nav bar */
+body{
+    background: rgb(224, 224, 238);
+    font-family: 'Poppins', sans-serif;
+}
+.first-nav-bar{
+    height: auto;
+    background: rgb(1, 1, 29);
+}
+.img-icon-plus {
+    height: 20px;
+    width: auto;
+}
+h5{
+    color: white;
+    font-weight: bold;
+}
+#tail {
+    font-size: 14px;
+}
+/* zone de recherche */
+.box{
+    width: 300px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 10px;
+    background: #eaeaea;
+}
+.box > i {
+    font-size: 20px;
+    color: #777;
+}
+.box > input {
+    flex: 1;
+    height: 20px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: #eaeaea;
+}
+/* content part one */
+.zone-one {
+    padding: 5%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);
+}
+.zone-tow {
+    background: #488ffb;
+    border-radius: 15px;
+    box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);   
+}
+/* content part two */
+.zonee-tow {
+    background: rgb(1, 1, 29);
+    border-radius: 15px;
+    box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);
+}
+.zonee-three {
+    padding: 2%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 1px 2px 2px 2px rgb(9 0 0 / 47%);
+}
+/* pagination */
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pagination li{
+    list-style: none;
+    padding: 2px;
+    margin: 10px;
+    flex-shrink: 0;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #999;
+    color: #999;
+  }
+  .pagination li.active{
+    background: #488ffb;
+    color: white;
+    border-color: #488ffb;
+
+  }
+  .pagination li a{
+    text-decoration: none;
+    padding: 3px 8px;
+    color: inherit;
+    display: block;
+    font-family: sans-serif;
+    font-size: 13px;
+  }
+  i.fa-edit{color: #488ffb;}
+  i.fa-trash{color: red;}
+
+/* calendar part */
+  
